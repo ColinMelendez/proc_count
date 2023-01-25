@@ -13,7 +13,7 @@ static int proc_count_show(struct seq_file *m, void *v)
 		count++;
 	}
 
-	seq_printf(m, "%d", count);
+	seq_printf(m, "%i", count);
 	return 0;
 }
 
