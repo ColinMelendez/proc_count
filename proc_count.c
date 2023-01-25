@@ -4,7 +4,7 @@
 #include <linux/seq_file.h>
 #include <linux/sched.h>
 
-static int proc_count_show(struct seq_file *m, void *v)
+static int show()
 {
 	struct task_struct *task;
 	int count = 0;
@@ -13,13 +13,13 @@ static int proc_count_show(struct seq_file *m, void *v)
 		count++;
 	}
 
-	seq_printf(m, "%d processes running on the system right now (including init)", count);
+	seq_printf(count);
 	return 0;
 }
 
 static int __init proc_count_init(void)
 {
-	proc_create_single("proc_count", 0, NULL, proc_count_show);
+	proc_create_single("proc_count", 0, NULL, show);
 	pr_info("proc_count: init\n");
 	return 0;
 }

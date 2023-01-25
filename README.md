@@ -16,7 +16,7 @@ Explain how to build your kernel module
 Explain how to run your kernel module and what to expect
 
 1.  Load the compiled module into the kernel by running: "sudo insmod proc_count.ko"
-2.  Use the program by running: "cat Proc/count"
+2.  Use the program by running: "cat /proc/count"
 
 This will result in a number representing the number of proesses currently running being written to the terminal as a single integer.
 
